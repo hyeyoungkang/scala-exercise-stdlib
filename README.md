@@ -37,3 +37,7 @@
     res0: List[java.lang.String] = List(1, 2, 3, 4, 5)
 ```
     
+    
+#Set
+- 집합에는 중복된 원소가 들어갈 수 없다
+- contains, intersect(deprecated v2.8), union, diff,subsetOf
