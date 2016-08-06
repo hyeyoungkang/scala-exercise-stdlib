@@ -97,6 +97,7 @@ class ListSpec extends FunSuite with Matchers{
   }
 
   test("foldleft test"){
+
     val a = List(1,3,5,7)
     a.foldLeft(0)(_+_) should equal(16)
     a.foldLeft(10)(_+_) should equal(26)
