@@ -4,10 +4,54 @@ import org.scalatest.{FunSuite, Matchers}
   * Created by juliet on 2016. 8. 5..
   */
 class HigherOrderFunctionsSpec extends FunSuite with Matchers{
+  test("function vs method"){
+    // method
+    def foo(a:String) : String ={
+      a+a
+    }
+
+    // function
+//    val convertStr:String = { (x: Int) => { x.toString } }
+
+    def MyFirst(f : Int => String) :String ={
+      f(10)
+    }
+
+    def mH(value:Int)(x:Int => String):String ={
+      x(value)
+    }
+
+    // 고차 함수 API를 잘 활용해 보자
+    // map, fold, reduce, flatMap
+    val list = List(1,2,3)
+    list.map(_+10) shouldBe List(11,12,13)
+    list.map(_*10) shouldBe List(10,20,30)
+    list.reduce(_ + _) shouldBe 6
+    list.reduce( (x, y) => x+y)
+
+    list.sum
+
+    list.reduce(_*_) shouldBe 6
+
+    // fold는 초기값을 줄수 있음
+    // reduce 첫번째 값이 초기값이 됨
+    list.foldLeft(1)(_*_) shouldBe 6
+
+//    list.fold shouldBe 6
+    list.reduce( (x, y) => x*y) shouldBe 6
+    // flatMap => map + flatten
+    list.flatMap{ i => List(i *11, i*11+1) } shouldBe List(11,12,22,23,33,34)
+  }
+
  test("lamda test"){
    def lambda = {x:Int => x+1}
    def lambda2 = (x:Int) => x+1
    val lambda3 = (x:Int) => x+1
+
+   // method
+   //def
+   // function :
+   //val
 
    val lambda4 = new Function1[Int, Int]{
      def apply(v1:Int) :Int = v1+1
