@@ -76,3 +76,6 @@ println(x.message) // constructor argument 는 member variable처럼 액세스 �
 - 함수 리터럴 : 함수가 생성된게 아니라 클래스 정의 만 있는것
 - 함수 : val 실제 함수가 생성됨
 - 함수를 실행 시점에 새로 만들어서 인자로 넘기거나 반환할수 있다
+
+#PARTIALLY APPLIED FUNCTIONS
+ 

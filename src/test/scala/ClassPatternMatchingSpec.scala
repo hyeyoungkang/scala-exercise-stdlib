@@ -58,6 +58,9 @@ class ClassPatternMatchingSpec extends WordSpec with Matchers{
       }
 
       getName(new Facebook) shouldBe "아이디"
+
+      val a :Option[Int] = Some(3)
+
     }
   }
 }
