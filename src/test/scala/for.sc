@@ -74,3 +74,6 @@ def uncurry[A,B,C](f: A=> B=>C) : (A, B) =>C ={
 
 def foo1(a: Int, b :Int) = a+b
 
+def compose[A,B,C](f:B => C, g:A => B) : A => C = {
+  f(g(a))
+}
